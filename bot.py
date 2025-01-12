@@ -170,7 +170,7 @@ def get_response(message):
                 else:
                     return "Sorry, I couldn't fetch flight information at the moment."
             else:
-                return "Please specify both departure and arrival cities clearly. For example: 'Show flights from NYC to LAX'"
+                return "Please specify both departure and arrival cities clearly. For example: 'Show flights from MAA to CJB'"
     
         for intent in intents['intents']:
             if intent['tag'] == tag:
