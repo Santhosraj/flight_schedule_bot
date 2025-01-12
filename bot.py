@@ -14,7 +14,7 @@ import asyncio
 
 
 lemmatizer = WordNetLemmatizer()
-intents = json.load(open("D:\internship\project_1\intents.json", encoding="utf-8"))
+intents = json.load(open("intents.json", encoding="utf-8"))
 words = pickle.load(open(r"words.pkl", 'rb'))
 classes = pickle.load(open(r"classes.pkl", 'rb'))
 model = load_model(r"botmodel.keras")
@@ -63,13 +63,11 @@ def get_flight_data(from_city, to_city):
                                 headers=headers,
                                 data=data)
         access_token = response.json()['access_token']
-        #API_KEY = "4a3496638b6088c987445bce156f3ad6"
         headers = {'Authorization': 'Bearer' + ' ' + access_token}
         
         flight_url = "https://test.api.amadeus.com/v2/shopping/flight-offers"
         current_date = datetime.now().strftime("%Y-%m-%d")
         params = {
-            
             "originLocationCode": from_city,  
             "destinationLocationCode": to_city,    
             "departureDate": current_date , 
