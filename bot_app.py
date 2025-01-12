@@ -149,7 +149,7 @@ def get_response(message):
             if flights and 'error' not in flights:
                 return format_flight_response(flights)
             else:
-                return "Sorry, I couldn't fetch flight information at the moment."
+                return "Sorry, I couldn't fetch flight for the given cities.Kindly check the IATA code"
         else:
             return "Please specify both departure and arrival cities clearly. For example: 'Show flights from MAA to CJB'"
     for intent in intents['intents']:
