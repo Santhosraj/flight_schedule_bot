@@ -156,7 +156,13 @@ def get_response(message):
         if intent['tag'] == tag:
             return random.choice(intent['responses'])
     return "OOPS! IDK😅"
-
+    
+@cl.on_chat_start
+async def start():
+    await cl.Message(
+        content="Hello! I am Airmate✈️! How can I help you today?"
+    ).send()
+    
 @cl.on_message
 async def main(message: str):
     response = get_response(message)
