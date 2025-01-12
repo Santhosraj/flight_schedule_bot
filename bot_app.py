@@ -10,7 +10,7 @@ import requests
 from datetime import datetime, timedelta
 
 lemmatizer = WordNetLemmatizer()
-intents = json.load(open("D:\\internship\\project_1\\intents.json", encoding="utf-8"))
+intents = json.load(open("intents.json", encoding="utf-8"))
 words = pickle.load(open(r"words.pkl", 'rb'))
 classes = pickle.load(open(r"classes.pkl", 'rb'))
 model = load_model(r"botmodel.keras")
@@ -151,7 +151,7 @@ def get_response(message):
             else:
                 return "Sorry, I couldn't fetch flight information at the moment."
         else:
-            return "Please specify both departure and arrival cities clearly. For example: 'Show flights from NYC to LAX'"
+            return "Please specify both departure and arrival cities clearly. For example: 'Show flights from MAA to CJB'"
     for intent in intents['intents']:
         if intent['tag'] == tag:
             return random.choice(intent['responses'])
