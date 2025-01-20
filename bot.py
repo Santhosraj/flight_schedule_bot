@@ -57,8 +57,8 @@ def get_flight_data(from_city, to_city):
         AUTH_ENDPOINT = "https://test.api.amadeus.com/v1/security/oauth2/token"
         headers = {"Content-Type": "application/x-www-form-urlencoded"}
         data = {"grant_type": "client_credentials",
-                "client_id": 'lbAVAdUiOTe6QIBNhNKDlsMlQ4mcHipA',
-                "client_secret": 'eLksvfr1X4TmgIvc'}
+                "client_id": '',
+                "client_secret": ''}
         response = requests.post(AUTH_ENDPOINT,
                                 headers=headers,
                                 data=data)
